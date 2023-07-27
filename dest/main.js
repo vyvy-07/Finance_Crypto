@@ -4,12 +4,7 @@ function load() {
   });
 }
 load();
-const listImg = () => {
-  let imgArr = document.querySelectorAll("img");
-  const list = imgArr?.map((item) => item?.isLoaded !== false);
-  console.log("list", list);
-};
-listImg();
+
 function initLoading() {
   let loadedCount = 0;
   let img = document.querySelectorAll("img").length;
