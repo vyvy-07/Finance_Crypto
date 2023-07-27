@@ -1,5 +1,4 @@
 function load() {
-  let load = document.querySelector(".loading");
   window.addEventListener("load", function () {
     initLoading();
   });
@@ -14,7 +13,7 @@ listImg();
 function initLoading() {
   let loadedCount = 0;
   let img = document.querySelectorAll("img").length;
-  let containers = document.querySelector("body");
+  let container = document.querySelector("body");
 
   if (img > 0) {
     let loadedLib = imagesLoaded(container);
