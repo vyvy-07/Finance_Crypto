@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Flow</title>
+    <link rel="icon" type="favicon" href="favicon.ico">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- loading -->
+    <style>
+        .loading {
+            width: 100vw;
+            height: 100vh;
+            background: #010725;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10000;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .loading.active {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: 0.4s;
+            -webkit-transition: 0.4s;
+        }
+
+        .loading .loading__group {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+        }
+
+        .loading .loading__group-tree {
+            width: 160px;
+            height: 4px;
+            background: #0328ee;
+            border-radius: 100px;
+        }
+
+        .loading .loading__group-tree .percent {
+            width: 0;
+            display: block;
+            background-color: #fff;
+            height: 4px;
+            border-radius: 100px;
+        }
+
+        @media screen and (max-width: 576px) {
+            .loading .loading__group-tree {
+                width: 130px;
+            }
+        }
+
+        .loading .loading__group-count {
+            font-size: 16px;
+            line-height: 100%;
+            color: #fff;
+            text-align: center;
+            margin-top: 13px;
+        }
+    </style>
+    <!-- meta tag facebook -->
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+    <!-- meta tag twitter -->
+    <meta property="og:type" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- nhúng css-->
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+</head>
+
+<body class="homepage">
+    <div class="loading">
+        <div class="loading__group">
+            <div class="loading__group-tree">
+                <div class="percent"></div>
+            </div>
+            <h1 class="loading__group-count"></h1>
+        </div>
+    </div>
+    <header class="header">
+        <div class="background --header">
+            <img srcset="img/bgr.png 2x" class="background__img" alt="">
+        </div>
+        <div class="container">
+            <div class="header__left">
+                <a href="index.html" class="header__left-logo">
+                    <img src="img/logo.svg" class="logo" alt="">
+                </a>
+                <a href="index.html" class="header__left-logo --mobile">
+                    <img src="img/logo-xs.svg" class="logo-mini" alt="">
+                </a>
+                <div class="menu">
+                    <li><a class="menu__item active" href="index.html"><span>Home</span></a></li>
+                    <li><a class="menu__item" href="about.html"><span>About</span></a></li>
+                    <li><a class="menu__item" href="pricing.html"><span>Pricing</span></a></li>
+                    <li><a class="menu__item" href="tokens.html"><span>Tokens</span></a></li>
+                    <li><a class="menu__item" href="blog.html"><span>Blog</span></a></li>
+                    <li><a class="menu__item --contactmenu" href="contact.html"><span>Contact us</span></a>
+                    </li>
+                    <a href="contact.html" class="btndown --mini">
+                        Download App
+                    </a>
+                </div>
+            </div>
+            <div class="btnmenu">
+                <img srcset="img/menu3-.png 2x" class="btnmenu__item open " alt="">
+                <img srcset="img/close.png 2x" class="btnmenu__item close " alt="">
+            </div>
+            <a href="contact.html" class="btndown">
+                Download App
+            </a>
+        </div>
+    </header>
+    <main class="main">
+        <section class="schero">
+            <div class="schero__left --pd200 ">
+                <div class="textbox">
+                    <h1 class="heading --h1">Buy, trade, and hold 350+ cryptocurrencies</h1>
+                    <p class="description">Lorem ipsum dolor sittamet, consectetur adipiscing elit. Feugiat nulla
+                        suspendisse tortor aenean dis placerat.</p>
+                </div>
+                <div class="schero__left-btns">
+                    <a class="btndown " href="contact.html">Download App</a>
+                    <a class="btndown btnpricing --grey" href="pricing.html">View pricing</a>
+                </div>
+            </div>
+            <div class="schero__right">
+                <div class="schero__right-item --world">
+                    <img srcset="img/planet-img.png 2x" alt="FinanceFlow" class="img ">
+                </div>
+                <div class="background --world">
+                    <img srcset="img/bgr.png 2x" alt="" class="background__img ">
+                </div>
+            </div>
+        </section>
+        <section class="sccompany --pd120">
+            <div class="container">
+                <span class="description">Finance flow has been featured on</span>
+                <div class="sccompany__list">
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp1.png 2x" alt="">
+                    </div>
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp2.png 2x" alt="">
+                    </div>
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp3.png 2x" alt="">
+                    </div>
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp4.png 2x" alt="">
+                    </div>
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp5.png 2x" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="scbuilt">
+            <div class="background --built">
+                <img srcset="img/bgr.png 2x" alt="" class="background__img">
+            </div>
+            <div class="container">
+                <div class="textbox --center">
+                    <h2 class="heading --h2">Build your crypto portfolio</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla
+                        suspendisse tortor aene.</p>
+                </div>
+                <div class="scbuilt__boxs">
+                    <a href="" class="itembox">
+                        <div class="itembox__img">
+                            <img srcset="img/crypto1.png 2x" alt="">
+                        </div>
+                        <div class="contentbox">
+                            <h3 class="heading --h3">Send & Receive</h3>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                                nulla suspendisse tortor aene.</p>
+                        </div>
+                    </a>
+
+                    <a href="" class="itembox">
+                        <div class="itembox__img">
+                            <img srcset="img/crypto2.png 2x" aflt="">
+                        </div>
+                        <div class="contentbox">
+                            <h3 class="heading --h3">100% Secure Wallet</h3>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                                nulla suspendisse tortor aene.</p>
+                        </div>
+                    </a>
+                    <div class="itembox ip14 --blue-bgr">
+                        <div class="contentbox">
+                            <div class="contentbox__main">
+                                <h3 class="heading --h3">iOS & Android App</h3>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In amet,
+                                    morbi non at sed neque.</p>
+                            </div>
+                        </div>
+                        <div class="itembox__img">
+                            <img srcset="img/ip14.png 2x" alt="">
+                        </div>
+                    </div>
+                    <a href="" class="itembox">
+                        <div class="itembox__img">
+                            <img srcset="img/crypto3.png 2x" alt="">
+                        </div>
+                        <div class="contentbox">
+                            <h3 class="heading --h3">Trading Charts</h3>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                                nulla suspendisse tortor aene.</p>
+                        </div>
+                    </a>
+                    <a href="" class="itembox">
+                        <div class="itembox__img">
+                            <img srcset="img/crypto4.png 2x" alt="">
+                        </div>
+                        <div class="contentbox">
+                            <h3 class="heading --h3">Real Time Trading</h3>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                                nulla suspendisse tortor aene.</p>
+                        </div>
+                    </a>
+                </div>
+                <a class="btndown --mg" href="contact.html">Download App</a>
+            </div>
+        </section>
+        <section class="sctokens">
+            <div class="background --tokens">
+                <img srcset="img/bgr.png 2x" alt="" class="background__img">
+            </div>
+            <div class="container">
+                <div class="sctokens__token">
+                    <div class="sctokens__token-img">
+                        <img srcset="img/twoip.png 2x" alt="" class="twoip">
+                    </div>
+                    <div class="textbox --left">
+                        <div class="textbox__top">
+                            <h2 class="heading --h2">Earn daily rewards on your idle tokens</h2>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                                nulla suspendisse tortor aene.</p>
+                        </div>
+                        <div class="textbox__listmore">
+                            <div class="textbox__listmore-item">
+                                <img class="logotk" srcset="img/token1.png 2x" alt="">
+                                <span class="text">100% Private data</span>
+                            </div>
+                            <div class="textbox__listmore-item">
+                                <img class="logotk" srcset="img/token2.png 2x" alt="">
+                                <span class="text">99.99% Uptime guarantee</span>
+                            </div>
+                            <div class="textbox__listmore-item">
+                                <img class="logotk" srcset="img/token3.png 2x" alt="">
+                                <span class="text">24/7 Dedicated support</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sctokens__token --maxw --pd80">
+                <div class="textbox --left">
+                    <div class="textbox__top">
+                        <h2 class="heading --h2">Earn daily rewards on your idle tokens</h2>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla
+                            suspendisse tortor aene.</p>
+                    </div>
+                    <div class="textbox__listmore">
+                        <div class="textbox__listmore-item">
+                            <img class="logotk" srcset="img/token.png 2x" alt="">
+                            <span class="text">100% Private data</span>
+                        </div>
+                        <div class="textbox__listmore-item">
+                            <img class="logotk" srcset="img/token5.png 2x" alt="">
+                            <span class="text">99.99% Uptime guarantee</span>
+                        </div>
+                        <div class="textbox__listmore-item">
+                            <img class="logotk" srcset="img/token6.png 2x" alt="">
+                            <span class="text">24/7 Dedicated support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sctokens__img">
+                    <img srcset="img/laptop.png 2x" alt="" class="img">
+                </div>
+            </div>
+        </section>
+        <section class="scexplore --blue-bgr ">
+            <div class="container">
+                <div class="textbox --left">
+                    <div class="textbox__top">
+                        <h2 class="heading --h2">Explore endless possibilities with FinanceFlow</h2>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla
+                            suspendisse tortor aene.</p>
+                    </div>
+                    <a class="btndown --white" href="contact.html">Download App</a>
+                </div>
+                <div class="scexplore__right">
+                    <img srcset="img/twoip.png 2x" alt="" class="scexplore__right-twoip">
+                </div>
+            </div>
+        </section>
+        <section class="scusers --pd200">
+            <div class="background --user">
+                <img class="background__img" srcset="img/bgr.png 2x" alt="">
+            </div>
+            <div class="container">
+                <div class="textbox --flex">
+                    <div class="textbox__top">
+                        <h2 class="heading --h2">What our users say?</h2>
+                    </div>
+                    <a class="btndown" href="contact.html">Download App</a>
+                </div>
+            </div>
+            <div class="scusers__list">
+                <div class="scusers__list-box">
+                    <p class="details">
+                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim
+                        et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus
+                        in”
+                    </p>
+                    <div class="person">
+                        <div class="person__avt">
+                            <img src="img/ps.jpg" alt="">
+                        </div>
+                        <div class="person__name">
+                            <span class="person__name-text --uppercase">John carter</span>
+                            <span class="person__name-text --uppercase role">Role, Company</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="scusers__list-box">
+                    <p class="details">
+                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim
+                        et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus
+                        in”
+                    </p>
+                    <div class="person">
+                        <div class="person__avt">
+                            <img src="img/ps1.jpg" alt="">
+                        </div>
+                        <div class="person__name">
+                            <span class="person__name-text --uppercase">John carter</span>
+                            <span class="person__name-text --uppercase role">Role, Company</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="scusers__list-box">
+                    <p class="details">
+                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim
+                        et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus
+                        in”
+                    </p>
+                    <div class="person">
+                        <div class="person__avt">
+                            <img src="img/ps2.jpg" alt="">
+                        </div>
+                        <div class="person__name">
+                            <span class="person__name-text --uppercase">John carter</span>
+                            <span class="person__name-text --uppercase role">Role, Company</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="scusers__list-box">
+                    <p class="details">
+                        “Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim
+                        et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus
+                        in”
+                    </p>
+                    <div class="person">
+                        <div class="person__avt">
+                            <img src="img/ps.jpg" alt="">
+                        </div>
+                        <div class="person__name">
+                            <span class="person__name-text --uppercase">John carter</span>
+                            <span class="person__name-text --uppercase role">Role, Company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="scstarted">
+            <div class="container">
+                <div class="textbox --left">
+                    <div class="textbox__top">
+                        <h2 class="heading --h2">Get started today</h2>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla
+                            suspendisse tortor aene.</p>
+                    </div>
+                    <div class="textbox__listmore">
+                        <div class="textbox__listmore-item">
+                            <img class="logotk" srcset="img/down.png 2x" alt="">
+                            <span class="text">Download app</span>
+                        </div>
+                        <div class="textbox__listmore-item">
+                            <img class="logotk" srcset="img/create.png 2x" alt="">
+                            <span class="text">Create a free account</span>
+                        </div>
+                        <div class="textbox__listmore-item">
+                            <img class="logotk" srcset="img/stt.png 2x" alt="">
+                            <span class="text">Start trading</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="scstarted__video">
+                    <div class="scstarted__video-img">
+                        <img src="img/video.jpg" class="banner-video" alt="">
+                        <div class="video" data-id="NoyMCybT8ko">
+                            <div class="video__iframe">
+                                <iframe width="100%" height="100%" src="" title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="play__group">
+                        <img class="play__group-play" srcset="img/playbtn.png 2x" alt="">
+                        <img class="play__group-play hover" srcset="img/playbtn-hover.png 2x" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="browse --pd120">
+            <div class="container">
+                <div class="textbox --flex">
+                    <h2 class="heading --h2">Browse our latest news</h2>
+                    <p class="description">Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque
+                        viverra donec diammeo.</p>
+                </div>
+                <div class="products">
+                    <a href="#" class="products__item">
+                        <div class="products__item-img">
+                            <img src="img/br1.jpg" class="imgproduct" alt="">
+                        </div>
+                        <div class="products__item-main">
+                            <div class="textbox">
+                                <span class="text">Products</span>
+                                <h3 class="heading --h3">The Basics about Cryptocurrency</h3>
+                                <p class="description">Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit.
+                                    Scelerisque viverra donec diammeo.</p>
+                            </div>
+                            <div class="person">
+                                <div class="person__avt">
+                                    <img src="img/ps1.jpg" alt="">
+                                </div>
+                                <div class="person__name">
+                                    <span class="person__name-text --uppercase">John carter</span>
+                                    <span class="person__name-text --uppercase role">Role, Company</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="products__item">
+                        <div class="products__item-img">
+                            <img src="img/br2.jpg" class="imgproduct" alt="">
+                        </div>
+                        <div class="products__item-main">
+                            <div class="textbox">
+                                <span class="text">Products</span>
+                                <h3 class="heading --h3">The Basics about Cryptocurrency</h3>
+                                <p class="description">Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit.
+                                    Scelerisque viverra donec diammeo.</p>
+                            </div>
+                            <div class="person">
+                                <div class="person__avt">
+                                    <img src="img/ps.jpg" alt="">
+                                </div>
+                                <div class="person__name">
+                                    <span class="person__name-text --uppercase">Alex Turner</span>
+                                    <span class="person__name-text --uppercase role">Role, Company</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="products__item">
+                        <div class="products__item-img">
+                            <img src="img/br3.jpg" class="imgproduct" alt="">
+                        </div>
+                        <div class="products__item-main">
+                            <div class="textbox">
+                                <span class="text">Products</span>
+                                <h3 class="heading --h3">The Basics about Cryptocurrency</h3>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                                    nulla suspendisse tortor aene.</p>
+                            </div>
+                            <div class="person">
+                                <div class="person__avt">
+                                    <img src="img/ps2.jpg" alt="">
+                                </div>
+                                <div class="person__name">
+                                    <span class="person__name-text --uppercase">John carter</span>
+                                    <span class="person__name-text --uppercase role">Role, Company</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a class="btndown --mg --grey" href="#">View All Articles</a>
+            </div>
+        </section>
+        <section class="download ">
+            <div class="container">
+                <div class="textbox --flex">
+                    <h2 class="heading --h2">Download our app</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non neque orci
+                        amet, amet.</p>
+                </div>
+                <div class="download__boxs">
+                    <div class="itembox ip14">
+                        <div class="contentbox">
+                            <div class="contentbox__main">
+                                <h2 class="heading --h2">Download for iOS</h2>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                    sed nulla integer in pellentesque tortor semper elementum. Felis.</p>
+                            </div>
+                            <a class="btndown" href="contact.html">
+                                <img src="img/apple.svg" alt="">
+                                <span>App Store</span>
+                            </a>
+                        </div>
+                        <div class="contentbox__img">
+                            <img srcset="img/ip14.png 2x" alt="">
+                        </div>
+                    </div>
+                    <div class="itembox ip14 ">
+                        <div class="contentbox">
+                            <div class="contentbox__main">
+                                <h2 class="heading --h2">Download for Android</h2>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                                    sed nulla integer in pellentesque tortor semper elementum. Felis.</p>
+                            </div>
+                            <a class="btndown" href="contact.html">
+                                <img src="img/chplay.svg" alt="">
+                                <span>PLAY STORE</span>
+                            </a>
+                        </div>
+                        <div class="contentbox__img">
+                            <img srcset="img/ip14.png 2x" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer ">
+        <div class="container">
+            <div class="footer__logo">
+                <a href="index.html" class="logo">
+                    <img srcset="img/logo.png 2x" alt="">
+                </a>
+                <div class="footer__logo-socials">
+                    <a href="" target="_blank" class="socials-item">
+                        <img src="img/ins.svg" alt="">
+                    </a>
+                    <a href="" target="_blank" class="socials-item">
+                        <img src="img/fb.svg" alt="">
+                    </a>
+                    <a href="" target="_blank" class="socials-item">
+                        <img src="img/link.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__menu">
+                <div class="footer__menu-left">
+                    <h3 class="heading --uppercase">menu</h3>
+                    <ul class="menuft">
+                        <li><a class="menu__item" href="#"><span>Home</span></a></li>
+                        <li><a class="menu__item" href="#"><span>About</span></a></li>
+                        <li><a class="menu__item" href="#"><span>Pricing</span></a></li>
+                        <li><a class="menu__item" href="#"><span>Tokens</span></a></li>
+                        <li><a class="menu__item" href="#"><span>Blog</span></a></li>
+                        <li><a class="menu__item" href="#"><span>contact us</span></a></li>
+                    </ul>
+                </div>
+                <div class="itembox">
+                    <div class="contentbox">
+                        <div class="contentbox__main">
+                            <h3 class="heading --h3">Download our Application</h3>
+                            <p class="description --fs18-lh32">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sed nulla integer .</p>
+                        </div>
+                        <div class="gr-btn">
+                            <a class="btndown --w193 " href="contact.html">
+                                <img src="img/apple.svg" alt="">
+                                <span>App Store</span>
+                            </a>
+                            <a class="btndown --w193 " href="contact.html">
+                                <img src="img/chplay.svg" alt="">
+                                <span>PLAY STORE</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="footer__end --fs16-lh26">
+                © 2023 CFD Circle, Inc.
+            </span>
+        </div>
+    </footer>
+    <script src="dest/jsmain.min.js"></script>
+    <script src="dest/main.js"></script>
+</body>
+
+</html>

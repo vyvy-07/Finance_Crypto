@@ -1,0 +1,269 @@
+//scfirst
+// --driver
+.--driver {
+    padding: var(--pd120) 0 var(--pd200);
+    z-index: 10;
+    @include xs {
+        --pd200: 50px;
+    }
+    .background {
+        width: 60%;
+        top: 0;
+        left: 0;
+        @include xs {
+            width: 100%;
+        }
+    }
+    .textbox {
+        margin-bottom: var(--gap);
+        .heading {
+            max-width: initial;
+        }
+    }
+    .scbuilt__boxs {
+        padding: initial;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        @include xs {
+            grid-template-columns: 1fr;
+        }
+        .itembox {
+            display: flex;
+            height: 100%;
+            // --pd: 58px 32px;
+            // padding: var(--pd);
+            @include ipad {
+                display: initial;
+            }
+            &__img {
+                --w: 68px;
+                display: flex;
+                min-width: 68px;
+                margin-right: var(--mg24);
+                align-items: start;
+                img {
+                    width: var(--w);
+                    height: var(--w);
+                }
+            }
+            .contentbox {
+                .description {
+                    @include text(var(--fs-lb18), dr, var(--lh-lb32), $white-cl, none);
+                    -webkit-line-clamp: 4;
+                }
+            }
+        }
+    }
+}
+
+// schistory
+.schistory {
+    display: flex;
+    width: 100%;
+    position: relative;
+    padding: 0 var(--pd-page);
+    &__story {
+        padding-left: calc((100vw - var(--container-width) - var(--pd-page)) / 2);
+        width: 60%;
+        padding-right: var(--pd100);
+        .textbox {
+            &:first-child {
+                --mg80: 80px;
+                margin-bottom: var(--mg80);
+            }
+            .description {
+                margin-top: 16px;
+                margin-bottom: var(--pd40);
+            }
+        }
+    }
+    &__img {
+        width: 40%;
+        display: flex;
+        &-banner {
+            position: absolute;
+            right: 0;
+            width: 40%;
+            top: 0;
+            object-fit: cover;
+            height: 100%;
+            @include opacity1;
+            &.--planet {
+                @include opacity0;
+            }
+        }
+    }
+}
+
+@include ipad {
+    .schistory {
+        flex-direction: column;
+        flex-wrap: wrap;
+        &__story {
+            width: 100%;
+            @include xs {
+                padding: 0;
+            }
+            .textbox {
+                &:first-child {
+                }
+                .description {
+                }
+            }
+        }
+        &__img {
+            // display: initial;
+            width: 100%;
+            &-banner {
+                margin-top: var(--pd60);
+                position: initial;
+                // top: 0;
+                height: 100%;
+                @include opacity0;
+                display: none;
+                &.--planet {
+                    display: block;
+                    width: 100%;
+                    max-width: 100%;
+                    @include opacity1;
+                }
+            }
+        }
+    }
+}
+
+// sctimeline
+.sctimeline {
+    padding: var(--pd200) 0 var(--pd120);
+    .container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        gap: var(--gap26);
+        @include xs {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__left {
+        grid-column: 1/5;
+    }
+    &__right {
+        grid-column: 6/13;
+        &-item {
+            display: flex;
+            border-bottom: 1px solid $white-cl;
+            padding-top: var(--pd80);
+            &:first-child {
+                padding-top: 0;
+            }
+            .dot {
+                --pd54: 54px;
+                margin-right: var(--pd54);
+            }
+            .textbox {
+                padding-bottom: var(--pd40);
+                .heading {
+                    --fs28: 28px;
+                    --lh30: 30px;
+                    letter-spacing: 0.28px;
+                    @include text(var(--fs28), db, var(--lh26), $white-cl, uppercase);
+                }
+                .--label {
+                    margin: var(--mg24) 0 12px;
+                }
+                .description {
+                    @include overtext(4);
+                }
+            }
+        }
+    }
+}
+
+@include ipad {
+    .sctimeline {
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap26);
+            @include xs {
+                grid-template-columns: 1fr;
+            }
+        }
+        &__left {
+            margin-bottom: var(--mg24);
+        }
+    }
+}
+
+// ourteam
+.ourteam {
+    &__list {
+        display: flex;
+        margin: 0 -15px;
+        @include sm {
+            margin: 0;
+            overflow: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            margin: 0 -20px;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        @include xs {
+            overflow: initial;
+            flex-direction: column;
+            margin: 0;
+        }
+        &-item {
+            padding: var(--mg24);
+            width: calc((100% - var(--gap)) / 3);
+            margin: 0 15px;
+            background: $blue;
+            border-radius: 40px;
+            &:last-child {
+                @include xs {
+                    margin: 0;
+                }
+            }
+            @include sm {
+                width: calc((100% - var(--gap)) / 2.3);
+                flex-shrink: 0;
+            }
+            @include xs {
+                width: 100%;
+                margin: 0;
+                margin-bottom: var(--gap32);
+            }
+            .avt {
+                width: 100%;
+                display: flex;
+                margin-bottom: var(--gap);
+                position: relative;
+                padding-bottom: 122.5%;
+                overflow: hidden;
+                border-radius: 40px;
+                filter: grayscale(0.5);
+                img {
+                    width: 100%;
+                    overflow: hidden;
+                    position: absolute;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+// sccompany
+.--aboutcompany {
+    padding: var(--pd120) 0 var(--pd200);
+    .textbox {
+        margin-bottom: var(--pd40);
+        .description {
+            --w: 496px;
+            max-width: var(--w);
+            margin: 0 auto;
+        }
+    }
+}

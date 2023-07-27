@@ -1,0 +1,82 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+}
+
+html {
+  // font-size: 62.5%; // => 10px = 1rem
+}
+
+body {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: auto;
+  background: $blue-bd;
+  @include text(var(--fs18), dr, var(--lh32), $white-cl, none); // tuỳ chỉnh
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  &.hide-scroll {
+    overflow: initial;
+    overflow-x: hidden;
+  }
+  .container-fluid {
+    width: 100%;
+    padding-right: var(--pd-page);
+    padding-left: var(--pd-page);
+    margin-right: auto;
+    margin-left: auto;
+    @include xs {
+      padding-right: calc(var(--gap) / 2);
+      padding-left: calc(var(--gap) / 2);
+    }
+  }
+  .container {
+    width: 100%;
+    padding-right: var(--pd-page);
+    padding-left: var(--pd-page);
+    margin-right: auto;
+    margin-left: auto;
+    @include xs {
+      padding-right: calc(var(--gap) / 2);
+      padding-left: calc(var(--gap) / 2);
+    }
+  }
+  @media (max-width: $lg-min) {
+    .container {
+      max-width: $container-width;
+    }
+  }
+  @media (max-width: $md-min) {
+    .container {
+      max-width: 1170px;
+    }
+  }
+  @media (max-width: $sm-min) {
+    .container {
+      max-width: 990px;
+    }
+  }
+  @media (max-width: $xs-min) {
+    .container {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: $xxs-min) {
+    .container {
+      max-width: 100%;
+    }
+  }
+  .mainwrapper {
+    width: 100%;
+    margin: auto;
+  }
+}

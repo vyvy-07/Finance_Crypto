@@ -1,0 +1,72 @@
+// css navigator (Menu)
+.menu {
+  @include dflex;
+  margin: 0 -13px;
+  margin-left: 32px;
+  position: relative;
+  z-index: 101;
+  &__item {
+    @include text(var(--fs14), dm, var(--lh16), $white-cl, uppercase);
+    letter-spacing: 1.4px;
+    padding: 10px 13px;
+    span {
+      border-bottom: 1px solid transparent;
+      @include transition(0.6s);
+    }
+    &:hover {
+      span {
+        border-bottom: 1px solid $white-cl;
+        @include transition(0.6s);
+      }
+    }
+    &.active {
+      span {
+        border-bottom: 1px solid $white-cl;
+      }
+    }
+  }
+  .btndown {
+    &.--mini {
+      @include transition(0.6s);
+      @include opacity0;
+      display: none;
+    }
+  }
+}
+
+@include ipad {
+  .menu {
+    @include opacity0;
+    @include transition(0.6s);
+    position: fixed;
+    flex-direction: column;
+    width: 100vw;
+    left: 0;
+    height: calc(100vh - var(--height-header));
+    top: var(--height-header);
+    z-index: 1000;
+    background-image: url("../img/bgr.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: $blue-bd;
+    margin: initial;
+    .btndown {
+      &.--mini {
+        @include transition(0.6s);
+        @include opacity0;
+        display: flex;
+        --btn-w: 300px;
+        --btn-h: 70px;
+        margin-top: 20px;
+      }
+    }
+    &__item {
+      display: block;
+      padding: 20px;
+      @include text(var(--fs26-nav), dm, 100%, $white-cl, uppercase);
+      @include xxs {
+        padding: 12px;
+      }
+    }
+  }
+}

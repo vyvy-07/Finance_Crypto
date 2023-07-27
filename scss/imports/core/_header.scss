@@ -1,0 +1,150 @@
+// css header
+.header {
+  height: var(--height-header);
+  background-color: transparent;
+  @include dflex;
+  position: relative;
+  z-index: 100;
+  .container {
+    height: 66px;
+    @include dflex;
+    justify-content: space-between;
+  }
+  &__left {
+    height: 100%;
+    @include dflex;
+    overflow: hidden;
+    &-logo {
+      position: relative;
+      z-index: 20;
+      @include opacity1;
+      padding: 32px 32px;
+      padding-left: 0;
+      cursor: pointer;
+      border-right: 1px solid $blue;
+      &.--mobile {
+        @include opacity0;
+        display: none;
+        min-width: var(--min-logo);
+        img {
+          width: 100%;
+        }
+      }
+      .logo {
+        @include dflex;
+      }
+    }
+  }
+  .btnmenu {
+    @include opacity0;
+    display: none;
+    @include transition(0.6s);
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 70;
+    align-items: center;
+    justify-content: end;
+    &__item {
+      position: absolute;
+      &.open {
+        @include transition(0.6s);
+        @include opacity1;
+        z-index: 10;
+      }
+      &.close {
+        @include transition(0.6s);
+        @include opacity0;
+        z-index: -1;
+      }
+    }
+    &.active {
+      @include transition(0.6s);
+      display: flex;
+      .btnmenu__item {
+        @include transition(0.6s);
+        &.open {
+          @include transition(0.6s);
+          @include opacity0;
+          z-index: -1;
+        }
+        &.close {
+          @include opacity1;
+          @include transition(0.6s);
+          z-index: 10;
+        }
+      }
+    }
+  }
+}
+
+@include ipad {
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: $blue-bd;
+    @include transition(0.6s);
+    .container {
+      align-items: end;
+      margin: 0 8px;
+    }
+    &__left {
+      overflow: visible;
+      &-logo {
+        padding: 0;
+        @include opacity0;
+        display: none;
+        border-right: none;
+        &.--mobile {
+          @include opacity1;
+          display: flex;
+        }
+      }
+    }
+    .btnmenu {
+      @include opacity1;
+      z-index: 70;
+      display: flex;
+      cursor: pointer;
+      &.active {
+        @include transition(0.6s);
+        .btnmenu__item {
+          cursor: pointer;
+          @include transition(0.6s);
+          &.open {
+            cursor: pointer;
+            @include transition(0.6s);
+            @include opacity0;
+            z-index: -1;
+          }
+          &.close {
+            cursor: pointer;
+            @include opacity1;
+            @include transition(0.6s);
+            z-index: 10;
+          }
+        }
+      }
+    }
+    .btndown {
+      @include opacity0;
+      display: none;
+    }
+    &.active {
+      @include transition(0.6s);
+      .menu {
+        @include transition(0.6s);
+        @include opacity1;
+        z-index: 100;
+        .btndown {
+          &.--mini {
+            @include transition(0.6s);
+            @include opacity1;
+          }
+        }
+      }
+    }
+  }
+}

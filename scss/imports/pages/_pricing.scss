@@ -1,0 +1,126 @@
+.--pricing {
+    padding: 0;
+    padding-bottom: var(--pd200);
+    @include ipad {
+        margin-top: var(--height-header);
+    }
+    .textbox {
+        padding: var(--pd40) 0;
+        .description {
+            max-width: 568px;
+        }
+    }
+    .logoboxs {
+        @include dflex;
+        justify-content: space-between;
+        @include sm {
+            flex-wrap: wrap;
+        }
+        @include xs {
+            display: initial;
+        }
+        .itembox {
+            background: initial;
+            padding: initial;
+            display: flex;
+            align-items: center;
+            &:nth-child(-n + 2) {
+                @include sm {
+                    margin-bottom: var(--gap32);
+                }
+                @include sm {
+                    margin-bottom: initial;
+                }
+            }
+            @include ipad {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            @include sm {
+                width: 50%;
+            }
+            @include xs {
+                width: 100%;
+                flex-direction: initial;
+                justify-content: initial;
+            }
+            .text {
+                margin-left: var(--mg24);
+                @include ipad {
+                    margin: 0;
+                }
+                @include xs {
+                    margin-left: var(--mg24);
+                }
+            }
+        }
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: var(--gap26);
+        --pd56: 56px;
+        padding-top: var(--pd56);
+        @include ipad {
+            display: flex;
+            overflow: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            margin-right: -20px;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        @include xs {
+            display: grid;
+            margin: 0;
+            grid-template-columns: 1fr;
+        }
+        &-item {
+            border-radius: 40px;
+            --pd: 48px 30px 42px 32px;
+            padding: var(--pd);
+            background: $blue;
+            @include ipad {
+                flex-shrink: 0;
+                width: calc((100% - (2 * var(--gap26))) / 2.2);
+            }
+            @include sm {
+                width: calc((100% - (2 * var(--gap26))) / 1.6);
+            }
+            @include xs {
+                width: 100%;
+            }
+            .textbox {
+                padding-top: 0;
+                &__tag {
+                    width: fit-content;
+                    background-color: $blue-light;
+                    padding: 9px;
+                    border-radius: 100px;
+                    margin-bottom: 16px;
+                    @include text(var(--fs14), db, var(--lh18), $white-cl, uppercase);
+                }
+            }
+            .content {
+                --pd54: 54px;
+                margin-bottom: var(--pd54);
+                &__list {
+                    &-item {
+                        margin-top: 16px;
+                        display: flex;
+                        align-items: center;
+                        .dot {
+                            margin-right: 16px;
+                            --w: 6px;
+                            min-width: 6px;
+                            background-color: $blue-light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

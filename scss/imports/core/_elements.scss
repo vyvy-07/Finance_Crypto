@@ -1,0 +1,108 @@
+.--blue-bgr {
+    background: $blue-light;
+}
+
+.dot {
+    --w: 24px;
+    min-width: 24px;
+    display: block;
+    width: var(--w);
+    height: var(--w);
+    background: $white-cl;
+    border-radius: 100%;
+}
+
+.background {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.6;
+    &.--header {
+        width: 100%;
+        top: initial;
+        left: -30%;
+        z-index: -1;
+        opacity: 40%;
+        @include ipad {
+            opacity: 0;
+        }
+    }
+    &__img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.--uppercase {
+    text-transform: uppercase;
+}
+
+@include xxs {
+    .background {
+        display: flex;
+        height: 100vh;
+        top: 0;
+        right: -80%;
+        z-index: -1;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    will-change: transform;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+.--mg {
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: $white-cl;
+}
+
+.heading {
+    font-family: di;
+    &.--h1 {
+        @include text(var(--fs66), db, var(--lh80), $white-cl, none);
+        letter-spacing: var(--ltc-1);
+    }
+    &.--h2 {
+        @include text(var(--fs42), db, var(--lh55), $white-cl, none);
+    }
+    &.--h3 {
+        @include transition(0.6s);
+        @include text(var(--fs18), db, var(--lh26), $white-cl, uppercase);
+        &:hover {
+            @include transition(0.6s);
+            opacity: 0.6;
+        }
+    }
+}
+
+.--label {
+    @include text(var(--fs-lb18), db, var(--lh26), $white-cl, uppercase);
+    letter-spacing: var(--ltc-09);
+}
+
+.--bd2 {
+    @include text(var(--fs16), db, var(--lh26), $white-cl, uppercase);
+    letter-spacing: var(--ltc-09);
+}
+
+.--title28 {
+    --fs28: 28px;
+    --lh30: 30px;
+    --ltc-028: 0.28px;
+    @include text(var(--fs28), db, var(--lh30), $white-cl, none);
+    letter-spacing: var(--ltc-09);
+}

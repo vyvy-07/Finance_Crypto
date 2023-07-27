@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance Flow</title>
+    <link rel="icon" type="favicon" href="favicon.ico" />
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- loading -->
+    <style>
+      .loading {
+        width: 100vw;
+        height: 100vh;
+        background: #010725;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10000;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .loading.active {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        display: none;
+      }
+
+      .loading .loading__group {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+      }
+
+      .loading .loading__group-tree::after,
+      .loading .loading__group-tree {
+        width: 160px;
+        height: 4px;
+        background: #0328ee;
+        border-radius: 100px;
+      }
+
+      .loading .loading__group-tree::after {
+        content: "";
+        width: 100px;
+        display: block;
+        background-color: #fff;
+      }
+
+      @media screen and (max-width: 576px) {
+        .loading .loading__group-tree {
+          width: 130px;
+        }
+      }
+
+      .loading .loading__group-count {
+        /* font-family: 'DM Sans'; */
+        font-size: 16px;
+        line-height: 100%;
+        color: #fff;
+        text-align: center;
+        margin-top: 13px;
+      }
+    </style>
+    <!-- meta tag facebook -->
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+    <!-- meta tag twitter -->
+    <meta property="og:type" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- nhúng css-->
+    <link rel="stylesheet" href="dest/style.min.css" />
+    <link rel="stylesheet" href="dest/fonts.css" />
+  </head>
+
+  <body class="blogdetailpage">
+    <div class="loading">
+      <div class="loading__group">
+        <div class="loading__group-tree"></div>
+        <h1 class="loading__group-count">0<span>%</span></h1>
+      </div>
+    </div>
+    <header class="header">
+      <!-- <div class="background --header">
+				<img srcset="img/bgr.png 2x" class="background__img" alt="">
+		  </div> -->
+      <div class="container">
+        <div class="header__left">
+          <a href="index.html" class="header__left-logo">
+            <img src="img/logo.svg" class="logo" alt="" />
+          </a>
+          <a href="index.html" class="header__left-logo --mobile">
+            <img src="img/logo-xs.svg" class="logo-mini" alt="" />
+          </a>
+          <div class="menu">
+            <li>
+              <a class="menu__item" href="index.html"><span>Home</span></a>
+            </li>
+            <li>
+              <a class="menu__item" href="about.html"><span>About</span></a>
+            </li>
+            <li>
+              <a class="menu__item" href="pricing.html"><span>Pricing</span></a>
+            </li>
+            <li>
+              <a class="menu__item" href="tokens.html"><span>Tokens</span></a>
+            </li>
+            <li>
+              <a class="menu__item active" href="blog.html"
+                ><span>Blog</span></a
+              >
+            </li>
+            <li>
+              <a class="menu__item" href="contact.html"
+                ><span>Contact us</span></a
+              >
+            </li>
+            <a href="contact.html" class="btndown --mini"> Download App </a>
+          </div>
+        </div>
+        <div class="btnmenu">
+          <img srcset="img/menu3-.png 2x" class="btnmenu__item open" alt="" />
+          <img srcset="img/close.png 2x" class="btnmenu__item close" alt="" />
+        </div>
+        <a href="contact.html" class="btndown"> Download App </a>
+      </div>
+    </header>
+    <main class="main">
+      <section class="scfirst --blog-dl">
+        <div class="container">
+          <div class="person">
+            <div class="person__avt">
+              <img src="img/ps.jpg" alt="" />
+            </div>
+            <div class="person__name">
+              <span class="person__name-text --uppercase">John carter</span>
+              <span class="person__name-text --uppercase role"
+                >Role, Company</span
+              >
+            </div>
+          </div>
+          <div class="textbox --left">
+            <h1 class="heading --h1">The Basics about Cryptocurrency</h1>
+            <p class="description">
+              Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit.
+              Scelerisque viverra donec diammeo.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="scdetails">
+        <div class="container">
+          <div class="img1">
+            <img src="img/bnn.jpg" alt="" />
+          </div>
+          <div class="scdetails__page">
+            <div class="textbox">
+              <h2 class="heading --h2">
+                Learn what you need to know before you invest in a virtual
+                currency
+              </h2>
+              <div class="gr__des">
+                <p class="description">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat non proident, sunt in culpa qui officia
+                  deserunt mollit anim id est laborum.
+                </p>
+                <p class="description">
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                  qui officia deserunt mollit anim id est laborum. Lorem ipsum
+                  dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                  minim veniam, quis nostrud exercitation ullamco laboris nisi
+                  ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div>
+            <h3 class="scdetails__page-title --title28">
+              How do I knowt how secure is my wallet?
+            </h3>
+            <p class="description mg">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
+            </p>
+            <p class="description">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat.
+            </p>
+          </div>
+          <div class="img2">
+            <img src="img/bnn2.jpg" alt="" />
+          </div>
+          <div class="scdetails__page">
+            <h3 class="scdetails__page-title --title28">
+              How do I knowt how secure is my wallet?
+            </h3>
+            <p class="description mg">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
+            </p>
+            <p class="description">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat.
+            </p>
+          </div>
+          <div class="itembox">
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+              sed nulla integer in pellentesque tortor semper elementum. Felis.
+            </p>
+          </div>
+          <div class="scdetails__page">
+            <h3 class="scdetails__page-title --title28">
+              How do I knowt how secure is my wallet?
+            </h3>
+            <p class="description mg">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
+            </p>
+            <p class="description">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="scemail --blue-bgr">
+        <div class="container">
+          <div class="textbox">
+            <img class="textbox__icon" srcset="img/eml.png 2x" alt="" />
+            <h2 class="heading --h2">
+              Subscribe to our crypto news weekly newsletter!
+            </h2>
+          </div>
+          <div class="scemail__inputgruop">
+            <input
+              type="text"
+              class="scemail__inputgruop-item"
+              placeholder="Enter email address" />
+            <a class="btndown --w193" href="contact.html">
+              <span class="--uppercase">subscribe</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="blogpost --postdetail">
+        <div class="container">
+          <div class="textbox --flex">
+            <h2 class="heading --h2">Latest Posts</h2>
+            <a href="contact.html" class="btndown --grey">
+              View All Articles
+            </a>
+          </div>
+          <div class="products">
+            <a href="#" class="products__item">
+              <div class="products__item-img">
+                <img src="img/im3.jpg" class="imgproduct" alt="" />
+              </div>
+              <div class="products__item-main">
+                <div class="textbox">
+                  <span class="text">Products</span>
+                  <h3 class="heading --h3">The Basics about Cryptocurrency</h3>
+                  <p class="description">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+                <div class="person">
+                  <div class="person__avt">
+                    <img src="img/ps1.jpg" alt="" />
+                  </div>
+                  <div class="person__name">
+                    <span class="person__name-text --uppercase"
+                      >John carter</span
+                    >
+                    <span class="person__name-text --uppercase role"
+                      >Role, Company</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="products__item">
+              <div class="products__item-img">
+                <img src="img/im2.jpg" class="imgproduct" alt="" />
+              </div>
+              <div class="products__item-main">
+                <div class="textbox">
+                  <span class="text">Products</span>
+                  <h3 class="heading --h3">The Basics about Cryptocurrency</h3>
+                  <p class="description">
+                    Lorem ipsum dolor sit ametero irseo, consectetur adipiscing
+                    elit. Scelerisque viverra donec diammeo.
+                  </p>
+                </div>
+                <div class="person">
+                  <div class="person__avt">
+                    <img src="img/ps1.jpg" alt="" />
+                  </div>
+                  <div class="person__name">
+                    <span class="person__name-text --uppercase"
+                      >John carter</span
+                    >
+                    <span class="person__name-text --uppercase role"
+                      >Role, Company</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#" class="products__item">
+              <div class="products__item-img">
+                <img src="img/im4.jpg" class="imgproduct" alt="" />
+              </div>
+              <div class="products__item-main">
+                <div class="textbox">
+                  <span class="text">Products</span>
+                  <h3 class="heading --h3">The Basics about Cryptocurrency</h3>
+                  <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Feugiat nulla suspendisse tortor aene.
+                  </p>
+                </div>
+                <div class="person">
+                  <div class="person__avt">
+                    <img src="img/ps2.jpg" alt="" />
+                  </div>
+                  <div class="person__name">
+                    <span class="person__name-text --uppercase"
+                      >John carter</span
+                    >
+                    <span class="person__name-text --uppercase role"
+                      >Role, Company</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__logo">
+          <a href="index.html" class="logo">
+            <img srcset="img/logo.png 2x" alt="" />
+          </a>
+          <div class="footer__logo-socials">
+            <a href="" target="_blank" class="socials-item">
+              <img src="img/ins.svg" alt="" />
+            </a>
+            <a href="" target="_blank" class="socials-item">
+              <img src="img/fb.svg" alt="" />
+            </a>
+            <a href="" target="_blank" class="socials-item">
+              <img src="img/link.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="footer__menu">
+          <div class="footer__menu-left">
+            <h3 class="heading --uppercase">menu</h3>
+            <ul class="menuft">
+              <li>
+                <a class="menu__item" href="#"><span>Home</span></a>
+              </li>
+              <li>
+                <a class="menu__item" href="#"><span>About</span></a>
+              </li>
+              <li>
+                <a class="menu__item" href="#"><span>Pricing</span></a>
+              </li>
+              <li>
+                <a class="menu__item" href="#"><span>Tokens</span></a>
+              </li>
+              <li>
+                <a class="menu__item" href="#"><span>Blog</span></a>
+              </li>
+              <li>
+                <a class="menu__item" href="#"><span>contact us</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="itembox">
+            <div class="contentbox">
+              <div class="contentbox__main">
+                <h3 class="heading --h3">Download our Application</h3>
+                <p class="description --fs18-lh32">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Mauris sed nulla integer .
+                </p>
+              </div>
+              <div class="gr-btn">
+                <a class="btndown --w193" href="contact.html">
+                  <img src="img/apple.svg" alt="" />
+                  <span>App Store</span>
+                </a>
+                <a class="btndown --w193" href="contact.html">
+                  <img src="img/chplay.svg" alt="" />
+                  <span>PLAY STORE</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="footer__end --fs16-lh26"> © 2023 CFD Circle, Inc. </span>
+      </div>
+    </footer>
+    <script src="dest/jsmain.min.js"></script>
+    <script src="dest/main.js"></script>
+  </body>
+</html>

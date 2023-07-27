@@ -1,0 +1,135 @@
+// css footer
+// css footer
+.footer {
+    --mg24: 24px;
+    background-color: $blue;
+    &__logo {
+        --pd: 60px;
+        padding-top: var(--pd);
+        @include dflex;
+        justify-content: space-between;
+        @include xs {
+            flex-direction: column;
+        }
+        .logo {
+            @include xs {
+                margin-bottom: var(--mg24);
+            }
+        }
+        &-socials {
+            margin: 0 -6px;
+            @include dflex;
+            justify-content: initial;
+            @include xs {
+                margin-right: -24px;
+            }
+            .socials-item {
+                margin: 0 6px;
+                cursor: pointer;
+                @include xs {
+                    margin-right: var(--mg24);
+                }
+                &:hover {
+                    @include transition(0.6s);
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+    &__menu {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        padding-top: var(--pd80);
+        padding-bottom: var(--pd120);
+        border-bottom: 1px solid #4d5684;
+        gap: var(--gap26);
+        @include ipad {
+            align-items: center;
+        }
+        @include xs {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        &-left {
+            grid-column: 1/4;
+            @include ipad {
+                grid-column: 1/5;
+            }
+            .heading {
+                @include text(var(--fs14), db, var(--lh16), $white-cl, uppercase);
+                padding-bottom: 30px;
+                letter-spacing: var(--ltc-07);
+                border-bottom: 1px solid var(--white-cl);
+            }
+            .menuft {
+                display: flex;
+                padding-top: 26px;
+                align-items: center;
+                justify-content: initial;
+                flex-wrap: wrap;
+                li {
+                    width: calc(100% / 2);
+                }
+                .menu__item {
+                    display: block;
+                    padding: 9px 0;
+                    @include text(var(--fs14), dr, var(--lh16), $white-cl, uppercase);
+                    &.active {
+                        font-family: db;
+                    }
+                }
+            }
+        }
+        .itembox {
+            grid-column: 8/13;
+            background-color: $grey2;
+            --pd-item: 44px 34px;
+            @include ipad {
+                grid-column: 7/13;
+            }
+            @include sm {
+                max-height: 442px;
+                grid-column: 6/13;
+            }
+            .contentbox {
+                &__main {
+                    .heading {
+                        margin: 0;
+                        @include text(var(--fs-lb18), db, var(--lh26), $white-cl, uppercase);
+                    }
+                    .description {
+                        @include text(var(--fs-lb18), dr, var(--lh-lb32), $white-cl, none);
+                        margin: 12px 0 24px;
+                        -webkit-line-clamp: initial;
+                    }
+                }
+                .gr-btn {
+                    @include dflex;
+                    justify-content: initial;
+                    margin: 0 -8px;
+                    @include sm {
+                        flex-direction: column;
+                    }
+                    .btndown {
+                        margin: 0 8px;
+                        @include sm {
+                            width: 100%;
+                            margin: 0;
+                            margin-bottom: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__end {
+        display: block;
+        text-align: start;
+        padding: 32px 0;
+        @include xs {
+            text-align: center;
+        }
+    }
+}

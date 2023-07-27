@@ -1,0 +1,240 @@
+// contact page
+.contactpage {
+  overflow-x: hidden;
+  .background {
+    top: -50%;
+    left: initial;
+    right: -30%;
+  }
+}
+
+.header {
+  &.--hdcontact {
+    // background: transparent;
+    &.active {
+      .background {
+        opacity: 0;
+        @include transition(0.6s);
+      }
+    }
+    .background {
+      left: initial;
+      opacity: 40%;
+      width: 100%;
+      right: -30%;
+      @include transition(0.6s);
+      @include xs {
+        right: -30%;
+        left: -30%;
+        width: initial;
+      }
+      img {
+        object-fit: initial;
+      }
+    }
+  }
+}
+
+.sclogins {
+  position: relative;
+  z-index: 10;
+  @include ipad {
+    margin-top: var(--height-header);
+  }
+  .contact {
+    display: flex;
+    @include sm {
+      flex-direction: column;
+      --pd52: 40px;
+    }
+    .sclogins__form {
+      --mg64: 64px;
+      margin-right: var(--mg64);
+      @include sm {
+        --pd50: 50px;
+        padding-bottom: var(--pd50);
+        --mg64: 0;
+      }
+      &-inputgr {
+        --pd52: 52px;
+        padding: var(--pd52) 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        @include xs {
+          --pd52: 40px;
+          flex-direction: column;
+        }
+        .inputgr__item {
+          display: flex;
+          flex-direction: column;
+          width: calc((100% - var(--gap26)) / 2);
+          --mg32: 32px;
+          margin-bottom: var(--mg32);
+          border: 1px solid transparent;
+          @include transition(0.6s);
+          .impt {
+            //opacity: 1;
+            @include transition(0.6s);
+            color: transparent;
+          }
+          .error {
+            color: #fd2626;
+            @include transition(0.6s);
+          }
+          &.invalid {
+            .impt {
+              @include transition(0.6s);
+              color: #fd2626;
+            }
+            .inputgr__item-input {
+              @include transition(0.6s);
+              border: 1px solid #fd2626;
+            }
+            .error {
+              @include transition(0.6s);
+            }
+          }
+          @include xs {
+            --mg32: 24px;
+            width: 100%;
+          }
+
+          &.--textarea {
+            width: 100%;
+            margin-bottom: 0;
+            textarea {
+              resize: none;
+              min-height: 162px;
+            }
+          }
+          &-label {
+            margin-bottom: 12px;
+          }
+          &-input {
+            border: none;
+            background-color: $blue;
+            padding: 21px 25px;
+            outline: none;
+            @include text(var(--fs18), dr, var(--lh26), $white-cl, none);
+            border-radius: 40px;
+            &::placeholder {
+              @include text(var(--fs18), dr, var(--lh26), $white-cl, none);
+            }
+            &:valid {
+              border: 1px solid transparent;
+            }
+            &:invalid {
+              border: 1px solid red;
+            }
+          }
+        }
+      }
+      .btndown {
+        --btn-h: 70px;
+        @include ipad {
+          // width: 100%;
+          margin: 0 auto;
+        }
+        @include xs {
+          width: 100%;
+        }
+      }
+    }
+    .sclogins__textbox {
+      justify-content: initial;
+      .textbox__top {
+        .heading {
+          @include text(22px, db, var(--lh30), $white-cl, none);
+        }
+      }
+    }
+  }
+}
+
+.scfaqs {
+  padding: var(--pd120) 0;
+  .accordions {
+    padding-top: var(--pd80);
+    --mx-w: 872px;
+    max-width: var(--mx-w);
+    margin: 0 auto;
+    &__item {
+      @include transition(0.6s);
+      cursor: pointer;
+      border-bottom: 1px solid $white-cl;
+      &-title {
+        position: relative;
+
+        z-index: 10;
+        background: $blue-bd;
+
+        @include transition(0.6s);
+        &.active + .accordions__item-text {
+          max-height: 400px;
+          @include transition(0.6s);
+          overflow: initial;
+          transition: max-height 0.6s ease-out;
+        }
+        &.active {
+          .plus {
+            &::after {
+              opacity: 0;
+              @include transition(0.6s);
+            }
+          }
+        }
+        --fs28: 28px;
+        --lh30: 30px;
+        @include text(var(--fs28), db, var(--lh30), $white-cl, none);
+        letter-spacing: 0.28px;
+        padding: 32px 8px;
+        @include dflex;
+        justify-content: space-between;
+        @include xs {
+          padding: 32px 0;
+          --fs28: 18px;
+        }
+
+        .plus {
+          height: 2px;
+          width: 27px;
+          display: block;
+          background: $white-cl;
+          transform: rotate(0deg);
+
+          &::after {
+            content: "";
+            @include transition(0.6s);
+
+            width: 27px;
+            height: 2px;
+            display: block;
+            background: $white-cl;
+            transform: rotate(90deg);
+
+            opacity: 1;
+          }
+        }
+      }
+      &-text {
+        position: relative;
+        z-index: 1;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s ease-out;
+        // display: none;
+        padding: 0 8px;
+        @include transition(0.6s);
+
+        .content {
+          @include transition(0.6s);
+        }
+        @include xs {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

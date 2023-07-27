@@ -1,0 +1,289 @@
+// css img, button, heading, title, input, elements, components...
+.btndown {
+    --btn-w: 210px;
+    --btn-h: 56px;
+    width: var(--btn-w);
+    height: var(--btn-h);
+    letter-spacing: var(--lt-btn);
+    border-radius: 100px;
+    background: $blue-light;
+    @include text(var(--fs16), db, var(--lh16), $white-cl, uppercase);
+    letter-spacing: var(--ltc-16);
+    position: relative;
+    z-index: 10;
+    @include dflex;
+    @include transition(0.6s);
+    img {
+        margin-right: 8px;
+    }
+    &:hover {
+        background: $blue;
+        @include transition(0.6s);
+    }
+    &.--w193 {
+        --btn-w: 193px;
+        --btn-h: 70px;
+    }
+    &.--white {
+        --btn-w: 210px;
+        --btn-h: 70px;
+        background: $white-cl;
+        color: $blue-light;
+        @include transition(0.6s);
+        &:hover {
+            background: $blue;
+            color: $white-cl;
+            @include transition(0.6s);
+        }
+    }
+    &.--grey {
+        --btn-w: 191px;
+        --btn-h: 70px;
+        background: $grey-cl;
+        color: $white-cl;
+        @include transition(0.6s);
+        &:hover {
+            background: $blue-light;
+            color: $white-cl;
+            @include transition(0.6s);
+        }
+    }
+}
+
+.textbox {
+    .description {
+        // @include overtext(3);
+    }
+    &.--center {
+        text-align: center;
+        // --mx-w: 534px;
+        // max-width: var(--mx-w);
+        .description {
+            padding-top: 15px;
+            --mx-w: 496px;
+            max-width: var(--mx-w);
+            @include mg0auto;
+        }
+    }
+    &.--left {
+        @include dflex;
+        align-items: initial;
+        flex-direction: column;
+        .textbox__top {
+            .description {
+                margin: 20px 0 30px 0;
+            }
+        }
+        .textbox__listmore {
+            &-item {
+                @include dflex;
+                justify-content: initial;
+                margin-bottom: 17px;
+                .logotk {
+                    margin-right: 17px;
+                }
+            }
+        }
+    }
+    &.--flex {
+        --mg40: 40px;
+        margin-bottom: var(--mg40);
+        @include dflex;
+        justify-content: space-between;
+        @include ipad {
+            --mw: 600px;
+            max-width: var(--mw);
+            align-items: start;
+            flex-direction: column;
+        }
+        .heading {
+            --mx-w: 496px;
+            max-width: var(--mx-w);
+            @include ipad {
+                margin-bottom: 16px;
+            }
+        }
+        .description {
+            --mx-w: 465px;
+            max-width: var(--mx-w);
+        }
+    }
+}
+
+.itembox {
+    --pd-item: 48px 22px 48px 24px;
+    background-color: $blue;
+    padding: var(--pd-item);
+    border-radius: 50px;
+    .contentbox {
+        .heading {
+            margin: 20px 0 7px;
+        }
+        .description {
+            font-family: dr;
+            font-size: 16px;
+            line-height: 26px;
+            // @include overtext(2);
+        }
+    }
+    &.ip14 {
+        grid-column: 2/3;
+        grid-row: 1/3;
+        overflow: hidden;
+        --pd-item: 44px 33px 0 33px;
+        .contentbox {
+            .heading {
+                margin: initial;
+                @include ipad {
+                    min-height: 110px;
+                }
+            }
+            .description {
+                margin: 22px 0 72px;
+            }
+        }
+        .itembox__img {
+            display: flex;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.person {
+    @include dflex;
+    justify-content: initial;
+    &__avt {
+        margin-right: 22px;
+        img {
+            border-radius: 100px;
+        }
+    }
+    &__name {
+        @include dflex;
+        flex-direction: column;
+        align-items: initial;
+        font-family: db;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: 0.8px;
+        .role {
+            font-family: dr;
+            margin-top: 6px;
+        }
+    }
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap26);
+    @include sm {
+        display: flex;
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        margin: 0 -20px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    @include xs {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-columns: auto;
+    }
+    &__item {
+        width: calc(100% - (var(--gap26) * 2)) / 3;
+        @include sm {
+            width: calc((100% - (2 * 26px)) / 2.2);
+            flex-shrink: 0;
+        }
+        @include xs {
+            width: 100%;
+        }
+        &-img {
+            border-top-right-radius: 40px;
+            border-top-left-radius: 40px;
+            position: relative;
+            padding-bottom: 56.3%;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            .imgproduct {
+                background: $blue-bd;
+                @include position;
+                width: 101%;
+                height: 104%;
+                object-fit: cover;
+                @include transition(0.6s);
+                &:hover {
+                    @include transition(0.6s);
+                    @include hoverimg;
+                }
+            }
+        }
+        &-main {
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            background: $blue;
+            position: relative;
+            padding: 43px 30px 34px 23px;
+            .textbox {
+                border-bottom: 1px solid var(--line-cl);
+                .description {
+                    padding: 16px 0 39px 0;
+                    line-height: var(--lh32);
+                }
+                .text {
+                    position: absolute;
+                    z-index: 1;
+                    top: -18px;
+                    font-family: dm;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-transform: uppercase;
+                    padding: 9px 15px;
+                    border-radius: 100px;
+                    background: $blue-light;
+                }
+            }
+            .person {
+                margin-top: 23px;
+            }
+        }
+    }
+}
+
+.scfirst {
+    padding-top: var(--pd60);
+    position: relative;
+    z-index: 1;
+    @include ipad {
+        margin-top: var(--height-header);
+    }
+    .textbox {
+        // text-align: center;
+        // @include xs {
+        //     text-align: start;
+        // }
+        &.--flex {
+            .description {
+                display: flex;
+                justify-content: end;
+                margin: initial;
+            }
+        }
+        .description {
+            --w: 606px;
+            max-width: var(--w);
+            margin: 0 auto;
+        }
+    }
+}

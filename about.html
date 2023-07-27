@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Finance Flow</title>
+    <link rel="icon" type="favicon" href="favicon.ico">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- loading -->
+    <style>
+        .loading {
+            width: 100vw;
+            height: 100vh;
+            background: #010725;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10000;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .loading.active {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: 0.4s;
+            -webkit-transition: 0.4s;
+        }
+
+        .loading .loading__group {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+        }
+
+        .loading .loading__group-tree {
+            width: 160px;
+            height: 4px;
+            background: #0328ee;
+            border-radius: 100px;
+        }
+
+        .loading .loading__group-tree .percent {
+            width: 0;
+            display: block;
+            background-color: #fff;
+            height: 4px;
+            border-radius: 100px;
+        }
+
+        @media screen and (max-width: 576px) {
+            .loading .loading__group-tree {
+                width: 130px;
+            }
+        }
+
+        .loading .loading__group-count {
+            font-size: 16px;
+            line-height: 100%;
+            color: #fff;
+            text-align: center;
+            margin-top: 13px;
+        }
+    </style>
+    <!-- meta tag facebook -->
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+    <!-- meta tag twitter -->
+    <meta property="og:type" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- nhúng css-->
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+</head>
+
+<body class="aboutpage">
+    <div class="loading">
+        <div class="loading__group">
+            <div class="loading__group-tree">
+                <div class="percent"></div>
+            </div>
+            <h1 class="loading__group-count"></h1>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="header__left">
+                <a href="index.html" class="header__left-logo">
+                    <img src="img/logo.svg" class="logo" alt="">
+                </a>
+                <a href="index.html" class="header__left-logo --mobile">
+                    <img src="img/logo-xs.svg" class="logo-mini" alt="">
+                </a>
+                <div class="menu">
+                    <li><a class="menu__item" href="index.html"><span>Home</span></a></li>
+                    <li><a class="menu__item active" href="about.html"><span>About</span></a></li>
+                    <li><a class="menu__item" href="pricing.html"><span>Pricing</span></a></li>
+                    <li><a class="menu__item" href="tokens.html"><span>Tokens</span></a></li>
+                    <li><a class="menu__item" href="blog.html"><span>Blog</span></a></li>
+                    <li><a class="menu__item" href="contact.html"><span>Contact us</span></a></li>
+                    <a href="contact.html" class="btndown --mini">
+                        Download App
+                    </a>
+                </div>
+            </div>
+            <div class="btnmenu">
+                <img srcset="img/menu3-.png 2x" class="btnmenu__item open " alt="">
+                <img srcset="img/close.png 2x" class="btnmenu__item close " alt="">
+            </div>
+            <a href="contact.html" class="btndown">
+                Download App
+            </a>
+        </div>
+    </header>
+    <main class="main">
+        <section class="scfirst">
+            <div class="container">
+                <div class="textbox --center" style="margin: 0;">
+                    <h1 class="heading --h1">About Finance Flow</h1>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla
+                        suspendisse tortor aenean dis placerat. Scelerisque imperdiet vitae dolor non aliquam.
+                        Malesuada.</p>
+                </div>
+            </div>
+        </section>
+        <section class="scbuilt --driver">
+            <div class="background --built">
+                <img srcset="img/bgr.png 2x" alt="" class="background__img">
+            </div>
+            <div class="container">
+                <div class="textbox --flex">
+                    <h2 class="heading --h2">What drives Finance Flow?</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipistcing elit. Feugiat nulla
+                        suspendisse tortor aene.</p>
+                </div>
+                <div class="scbuilt__boxs">
+                    <a href="" class="itembox">
+                        <div class="itembox__img">
+                            <img srcset="img/d1.png 2x" alt="">
+                        </div>
+                        <div class="contentbox">
+                            <h3 class="heading --h3">Open Source</h3>
+                            <p class="description">Lorem ipsum dolo rLorem ipsum dolor sit amet, sit amet, consectetur
+                                adipiscing elit. Feugiat nulla suspendisse tortor aene.</p>
+                        </div>
+                    </a>
+
+                    <a href="" class="itembox">
+                        <div class="itembox__img">
+                            <img srcset="img/d2.png 2x" aflt="">
+                        </div>
+                        <div class="contentbox">
+                            <h3 class="heading --h3">worldwide</h3>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et nibh urna
+                                in proin dui purus bibendum cras. Morbi cursus nunc.</p>
+                        </div>
+                    </a>
+                    <a href="" class="itembox">
+                        <div class="itembox__img">
+                            <img srcset="img/d3.png 2x" alt="">
+                        </div>
+                        <div class="contentbox">
+                            <h3 class="heading --h3">Transparent</h3>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et nibh urna
+                                in proin dui purus bibendum cras. Morbi cursus nunc.</p>
+                        </div>
+                    </a>
+                    <a href="" class="itembox">
+                        <div class="itembox__img">
+                            <img srcset="img/d4.png 2x" alt="">
+                        </div>
+                        <div class="contentbox">
+                            <h3 class="heading --h3">Community Driven</h3>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et nibh urna
+                                in proin dui purus bibendum cras. Morbi cursus nunc.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="schistory">
+            <div class="schistory__story">
+                <div class="textbox --left">
+                    <h2 class="heading --h2">Our mission</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient lorem
+                        purus justo, ultricies. Sollicitudin odio elementum urna placerat lacus, vulputate. Non
+                        malesuada viverra et ultrices cras. Tincidunt tempor, blandit augue ac
+                        feugiat. Praesent arcu tempus ullamcorper quisque in. Magna fermentum, lacus, fermentum arcu.
+                        quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu
+                        penatibus congue orci turpis. Enim diam id.</p>
+                    <p>Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra,
+                        in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras
+                        pretium tristique habitant. Elit eu penatibus
+                        congue orci turpis. Enim diam id.</p>
+                </div>
+                <div class="textbox --left">
+                    <h2 class="heading --h2">Our story</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient lorem
+                        purus justo, ultricies. Sollicitudin odio elementum urna placerat lacus, vulputate. Non
+                        malesuada viverra et ultrices cras. Tincidunt tempor, blandit augue ac
+                        feugiat. Praesent arcu tempus ullamcorper quisque in. Magna fermentum, lacus, fermentum arcu.
+                        quis nulla tellus suscipit id. Semper velit odio cras pretium tristique habitant. Elit eu
+                        penatibus congue orci turpis.</p>
+                    <p>Vulputate pellentesque proin facilisis dignissim gravida sed faucibus nunc. Nunc eget pharetra,
+                        in vitae porta lacus. Elit in nisl, in quis nulla tellus suscipit id. Semper velit odio cras
+                        pretium tristique habitant. Elit eu penatibus
+                        congue orci turpis.</p>
+                </div>
+            </div>
+            <div class="schistory__img">
+                <img src="img/htr.jpg" class="schistory__img-banner" alt="">
+                <img srcset="img/planet-img.png 2x" class="schistory__img-banner --planet" alt="">
+            </div>
+        </section>
+        <section class="sctimeline">
+            <div class="container">
+                <div class="sctimeline__left">
+                    <div class="textbox --left">
+                        <h2 class="heading --h2">Timeline</h2>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                            varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor
+                            interdum nulla, ut commodo diam libero vitae erat. </p>
+                    </div>
+                </div>
+                <div class="sctimeline__right">
+                    <div class="sctimeline__right-item">
+                        <span class="dot"></span>
+                        <div class="textbox --left">
+                            <h3 class="heading ">2014</h3>
+                            <span class="--label">Announcement</span>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis
+                                vivamus at mattis bibendum congue cras id interdum. Risus leo et.</p>
+                        </div>
+                    </div>
+                    <div class="sctimeline__right-item">
+                        <span class="dot"></span>
+                        <div class="textbox --left">
+                            <h3 class="heading ">2016</h3>
+                            <span class="--label">Announcement</span>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis
+                                vivamus at mattis bibendum congue cras id interdum. Risus leo et.</p>
+                        </div>
+                    </div>
+                    <div class="sctimeline__right-item">
+                        <span class="dot"></span>
+                        <div class="textbox --left">
+                            <h3 class="heading ">2018</h3>
+                            <span class="--label">Announcement</span>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis
+                                vivamus at mattis bibendum congue cras id interdum. Risus leo et.</p>
+                        </div>
+                    </div>
+                    <div class="sctimeline__right-item">
+                        <span class="dot"></span>
+                        <div class="textbox --left">
+                            <h3 class="heading --h3">2022</h3>
+                            <span class="--label">Announcement</span>
+                            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis
+                                vivamus at mattis bibendum congue cras id interdum. Risus leo et.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ourteam">
+            <div class="container">
+                <div class="textbox --flex">
+                    <h2 class="heading --h2">Our Team</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient lorem
+                        purus justo, ultricies.</p>
+                </div>
+                <div class="ourteam__list">
+                    <div class="ourteam__list-item">
+                        <div class="avt">
+                            <img src="img/p3.jpg" alt="">
+                        </div>
+                        <div class="person">
+                            <div class="person__name">
+                                <span class="person__name-text --uppercase">Kwon Ji Yong</span>
+                                <span class="person__name-text --uppercase role">Role, Company</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ourteam__list-item">
+                        <div class="avt">
+                            <img src="img/p1.jpg" alt="">
+                        </div>
+                        <div class="person">
+                            <div class="person__name">
+                                <span class="person__name-text --uppercase">Lee Ji Eun</span>
+                                <span class="person__name-text --uppercase role">Role, Company</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ourteam__list-item">
+                        <div class="avt">
+                            <img src="img/p2.jpg" alt="">
+                        </div>
+                        <div class="person">
+                            <div class="person__name">
+                                <span class="person__name-text --uppercase">John carter</span>
+                                <span class="person__name-text --uppercase role">Role, Company</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sccompany --aboutcompany --pd120">
+            <div class="container">
+                <div class="textbox">
+                    <h2 class="heading --h2">Investors</h2>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient lorem
+                        purus justo, ultricies.</p>
+                </div>
+                <div class="sccompany__list">
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp1.png 2x" alt="">
+                    </div>
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp2.png 2x" alt="">
+                    </div>
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp3.png 2x" alt="">
+                    </div>
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp4.png 2x" alt="">
+                    </div>
+                    <div class="sccompany__list-item">
+                        <img srcset="img/cp5.png 2x" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer ">
+        <div class="container">
+            <div class="footer__logo">
+                <a href="index.html" class="logo">
+                    <img srcset="img/logo.png 2x" alt="">
+                </a>
+                <div class="footer__logo-socials">
+                    <a href="" target="_blank" class="socials-item">
+                        <img src="img/ins.svg" alt="">
+                    </a>
+                    <a href="" target="_blank" class="socials-item">
+                        <img src="img/fb.svg" alt="">
+                    </a>
+                    <a href="" target="_blank" class="socials-item">
+                        <img src="img/link.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__menu">
+                <div class="footer__menu-left">
+                    <h3 class="heading --uppercase">menu</h3>
+                    <div class="menuft">
+                        <li><a class="menu__item" href="index.html"><span>Home</span></a></li>
+                        <li><a class="menu__item" href="about.html"><span>About</span></a></li>
+                        <li><a class="menu__item" href="pricing.html"><span>Pricing</span></a></li>
+                        <li><a class="menu__item" href="tokens.html"><span>Tokens</span></a></li>
+                        <li><a class="menu__item" href="blog.html"><span>Blog</span></a></li>
+                        <li><a class="menu__item" href="contact.html"><span>Contact us</span></a></li>
+
+                    </div>
+                </div>
+                <div class="itembox">
+                    <div class="contentbox">
+                        <div class="contentbox__main">
+                            <h3 class="heading --h3">Download our Application</h3>
+                            <p class="description --fs18-lh32">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Mauris sed nulla integer .</p>
+                        </div>
+                        <div class="gr-btn">
+                            <a class="btndown --w193 " href="contact.html">
+                                <img src="img/apple.svg" alt="">
+                                <span>App Store</span>
+                            </a>
+                            <a class="btndown --w193 " href="contact.html">
+                                <img src="img/chplay.svg" alt="">
+                                <span>PLAY STORE</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="footer__end --fs16-lh26">
+                © 2023 CFD Circle, Inc.
+            </span>
+        </div>
+    </footer>
+    <script src="dest/jsmain.min.js"></script>
+    <script src="dest/main.js"></script>
+</body>
+
+</html>

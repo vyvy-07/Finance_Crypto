@@ -1,0 +1,83 @@
+.--tokensfirst {
+    .textbox {
+        margin: 0;
+    }
+}
+
+.tokens {
+    overflow: hidden;
+    padding: var(--pd100) 0 var(--pd120);
+    .container {
+        display: flex;
+    }
+    &__list {
+        display: flex;
+        margin-left: -10px;
+        &-item {
+            --min-w: 240px;
+            width: calc(100% / 5);
+            min-width: var(--min-w);
+            &:nth-child(-n + 2) {
+                --min-w: 300px;
+            }
+            .content-main {
+                &.--uppercase {
+                    @include text(var(--fs16), db, 18px, $white-cl, uppercase);
+                }
+                --h: 99px;
+                display: flex;
+                align-items: center;
+                min-height: var(--h);
+                padding: var(--pd);
+                &.--bd2 {
+                    text-transform: initial;
+                    font-family: dr;
+                }
+                .coin {
+                    margin: 0 16px;
+                    @include text(var(--fs-lb18), db, 20px, $white-cl, none);
+                }
+                .tag {
+                    padding: 9px;
+                    @include text(12px, db, 12px, $white-cl, uppercase);
+                    background: $blue;
+                    border-radius: 100%;
+                }
+            }
+            &:last-child {
+                a {
+                    text-decoration: underline;
+                }
+                display: flex;
+                flex-direction: column;
+                min-width: initial;
+            }
+        }
+    }
+}
+
+@include ipad {
+    .tokens {
+        &__list {
+            flex-direction: column;
+            margin: 0;
+            &-item {
+                padding: 32px 0;
+                width: 100%;
+                border-bottom: 1px solid $grey-cl;
+                .content-main {
+                    min-height: initial;
+                    &.title {
+                        padding-bottom: 16px;
+                    }
+                }
+                .content-main {
+                    width: 100%;
+                    &:nth-child(n + 3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+//======================================================BOXED LAYOUT=======================================================
+$container-max-width: 100%;
+$container-width: 1228px; // tùy thuộc vào container của bản thiết kế // $container-width = container (đo từ bản thiết kế) + 30px
+
+/*GRID - media queries breakpoints*/
+
+$xxs-min: 576px; //  TÙY CHỈNH
+$xs-min: 768px; // KHÔNG THAY ĐỔI
+$sm-min: 992px; // KHÔNG THAY ĐỔI
+$md-min: 1200px; // KHÔNG THAY ĐỔI
+$smd-min: 1440px; // KHÔNG THAY ĐỔI
+$lg-min: 2561px; //  TÙY CHỈNH
+$ipad-min: 1025px;
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1);
+$smd-max: ($smd-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+$ipad-max: ($ipad-min - 1); // color
+$white-cl: #ffffff;
+$blue-light: #0328ee;
+$blue-bd: #010725;
+$blue: #010d50;
+$grey-cl: #1a203b;
+$grey2: #1a2561;
+$gradient-cl: linear-gradient(180deg, #df1cff 0%, #814bf6 50.55%, #00bcff 100%);
+$t: 0.4s;
+$cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
+:root {
+    --white-cl: #ffffff;
+    --blue-light: #0328ee;
+    --blue-bd: #010725;
+    --blue: #010d50;
+    --grey-cl: #1a203b;
+    --grey2: #1a2561;
+    // h1
+    --fs66: 66px;
+    --lh80: 80px;
+    --ltc-1: -1px;
+    // h2
+    --fs42: 42px;
+    --lh55: 55px;
+    //h3
+    --h3-fs: 3.2rem;
+    --h3-lh: 4.2rem;
+    //h4 tags
+    --h4-fs: 2.4rem;
+    --h4-lh: 3.2rem;
+    // fs body1
+    --fs18: 18px;
+    --lh32: 32px;
+    // fs body2
+    --fs16: 16px;
+    --fs14: 14px;
+    --lh26: 26px;
+    --lh16: 16px;
+    // label
+    --fs-lb18: 18px;
+    --lh-lb32: 32px;
+    --ltc-09: 0.9px;
+    // btn
+    --ltc-16: 1.6px;
+    --ltc-14: 1.4px;
+    --ltc-07: 0.7px;
+    --lh18: 18px;
+    --fs26-nav: 26px;
+    --lh26-nav: 26px;
+    // Genaral Variable
+    --gap: 30px;
+    --height-header: 132px;
+    --container-width: 1228px;
+    --gap32: 32px;
+    --gap26: 26px;
+    // padding
+    --pd-page: 20px;
+    --pd200: 200px;
+    --pd170: 170px;
+    --pd80: 80px;
+    --pd60: 60px;
+    --pd100: 100px;
+    --pd120: 120px;
+    --pd40: 40px;
+    --mg24: 24px;
+    --min-logo: 180px;
+    @media (max-width: $md-max) {
+        --container-width: 1170px;
+        --gap32: 25px;
+        --pd170: 120px;
+    }
+    @media (max-width: $ipad-max) {
+        --fs26-nav: 32px;
+        --pd200: 120px;
+        --pd120: 100px;
+        --height-header: 100px;
+        --min-logo: 180px;
+    }
+    @media (max-width: $sm-max) {
+        --container-width: 990px;
+        --pd170: 80px;
+        --pd100: 55px;
+    }
+    @media (max-width: $xs-max) {
+        // fs
+        --min-logo: 136px;
+        --height-header: 75px;
+        --container-width: 100%;
+        --fs66: 38px;
+        --fs18: 16px;
+        --fs26-nav: 26px;
+        --fs42: 28px;
+        --lh55: 36px;
+        // lh
+        --lh80: 46px;
+        --lh32: 26px;
+        // letter spacing
+        --ltc-09: 0.7 px;
+        // pd
+        --pd120: 80px;
+        --pd-page: 15px;
+        --gap32: 16px;
+        --pd80: 40px;
+        --pd170: 60px;
+        --pd100: 40px;
+        --height-header: 75px;
+        --pd60: 40px;
+    }
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Finance Flow</title>
+	<link rel="icon" type="favicon" href="favicon.ico">
+	<meta name="title" content="">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<!-- loading -->
+	<style>
+        .loading {
+            width: 100vw;
+            height: 100vh;
+            background: #010725;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10000;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .loading.active {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: 0.4s;
+            -webkit-transition: 0.4s;
+        }
+
+        .loading .loading__group {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+        }
+
+        .loading .loading__group-tree {
+            width: 160px;
+            height: 4px;
+            background: #0328ee;
+            border-radius: 100px;
+        }
+
+        .loading .loading__group-tree .percent {
+            width: 0;
+            display: block;
+            background-color: #fff;
+            height: 4px;
+            border-radius: 100px;
+        }
+
+        @media screen and (max-width: 576px) {
+            .loading .loading__group-tree {
+                width: 130px;
+            }
+        }
+
+        .loading .loading__group-count {
+            font-size: 16px;
+            line-height: 100%;
+            color: #fff;
+            text-align: center;
+            margin-top: 13px;
+        }
+    </style>
+	<!-- meta tag facebook -->
+	<meta property="og:locale" content="vi" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:image" content="" />
+	<!-- meta tag twitter -->
+	<meta property="og:type" content="" />
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="" />
+
+	<!-- nhúng css-->
+	<link rel="stylesheet" href="dest/style.min.css">
+	<link rel="stylesheet" href="dest/fonts.css">
+</head>
+
+<body class="contactpage">
+	<div class="loading">
+        <div class="loading__group">
+            <div class="loading__group-tree">
+                <div class="percent"></div>
+            </div>
+            <h1 class="loading__group-count"></h1>
+        </div>
+    </div>
+	<header class="header --hdcontact">
+		<div class="background --header">
+			<img srcset="img/bgr.png 2x" class="background__img" alt="">
+		</div>
+		<div class="container">
+			<div class="header__left">
+				<a href="index.html" class="header__left-logo">
+					<img src="img/logo.svg" class="logo" alt="">
+				</a>
+				<a href="index.html" class="header__left-logo --mobile">
+					<img src="img/logo-xs.svg" class="logo-mini" alt="">
+				</a>
+				<div class="menu">
+					<li><a class="menu__item" href="index.html"><span>Home</span></a></li>
+					<li><a class="menu__item" href="about.html"><span>About</span></a></li>
+					<li><a class="menu__item" href="pricing.html"><span>Pricing</span></a></li>
+					<li><a class="menu__item" href="tokens.html"><span>Tokens</span></a></li>
+					<li><a class="menu__item" href="blog.html"><span>Blog</span></a></li>
+					<li><a class="menu__item active" href="contact.html"><span>Contact us</span></a></li>
+					<a href="contact.html" class="btndown --mini">
+						Download App
+					</a>
+				</div>
+			</div>
+			<div class="btnmenu">
+				<img srcset="img/menu3-.png 2x" class="btnmenu__item open " alt="">
+				<img srcset="img/close.png 2x" class="btnmenu__item close " alt="">
+			</div>
+			<a href="contact.html" class="btndown">
+				Download App
+			</a>
+		</div>
+	</header>
+
+
+	<main class="main-contact">
+		<section class="sclogins">
+			<div class="container">
+				<div class="textbox">
+					<h1 class="heading --h1">Get in touch</h1>
+				</div>
+				<div class="contact">
+					<div class="sclogins__form">
+						<form id="form-1" class="sclogins__form-inputgr">
+							<div class="inputgr__item">
+								<span class="inputgr__item-label --label">name <span class="impt">*</span></span>
+								<input placeholder="FullName" pattern="[a-A-z]{1,20}" class="inputgr__item-input"
+									id="fullname"></input>
+								<span class="error"></span>
+							</div>
+							<div class="inputgr__item">
+								<span class="inputgr__item-label --label">Email<span class="impt">*</span></span>
+								<input placeholder="email@example.com" id="email" class="inputgr__item-input"></input>
+								<span class="error"></span>
+							</div>
+							<div class="inputgr__item">
+								<span class="inputgr__item-label --label">Company <span class="impt">*</span></span>
+								<input placeholder="Company Name" id="cpn" class="inputgr__item-input name"></input>
+								<span class="error"></span>
+							</div>
+							<div class="inputgr__item">
+								<span class="inputgr__item-label --label">Subject <span class="impt">*</span></span>
+								<input placeholder="How can we help?" id="question" class="inputgr__item-input"></input>
+								<span class="error"></span>
+							</div>
+							<div class=" inputgr__item --textarea">
+								<span class="inputgr__item-label --label">Message</span>
+								<textarea class="inputgr__item-input" id="mess" placeholder="Your Message" name=""
+									id=""></textarea>
+							</div>
+						</form>
+						<a href="contact.html" class="btndown --mini"> Send Message </a>
+					</div>
+
+					<div class="textbox --left sclogins__textbox">
+						<div class="textbox__top">
+							<h3 class="heading ">Want to reach us directly?</h3>
+							<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+								nulla suspendisse tortor aene.</p>
+						</div>
+						<div class="textbox__listmore">
+							<div class="textbox__listmore-item">
+								<img class="logotk" srcset="img/email.png 2x" alt="">
+								<span class="text">contact@example.com</span>
+							</div>
+							<div class="textbox__listmore-item">
+								<img class="logotk" srcset="img/email.png 2x" alt="">
+								<span class="text">press@example.com</span>
+							</div>
+							<div class="textbox__listmore-item">
+								<img class="logotk" srcset="img/email.png 2x" alt="">
+								<span class="text">support@example.com</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<section class="scfaqs">
+			<div class="container">
+				<div class="textbox --center">
+					<h1 class="heading --h1">FAQs </h1>
+				</div>
+				<div class="accordions">
+					<div class="accordions__item">
+						<div class="accordions__item-title ">
+							<span>Question 1</span>
+							<span class="plus"></span>
+						</div>
+						<div class="accordions__item-text">
+							<p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id
+								dui pharetra elementum sit id sagittis non donec egestas.</p>
+						</div>
+					</div>
+					<div class="accordions__item">
+						<div class="accordions__item-title"> <span>Question 2</span>
+							<span class="plus"></span>
+						</div>
+						<div class="accordions__item-text">
+							<p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id
+								dui pharetra elementum sit id sagittis non donec egestas.</p>
+						</div>
+					</div>
+					<div class="accordions__item">
+						<div class="accordions__item-title"> <span>Question 3</span>
+							<span class="plus"></span>
+						</div>
+						<div class="accordions__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id
+							dui pharetra elementum sit id sagittis non donec egestas.</div>
+					</div>
+					<div class="accordions__item">
+						<div class="accordions__item-title"> <span>Question 4</span>
+							<span class="plus"></span>
+						</div>
+						<div class="accordions__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id
+							dui pharetra elementum sit id sagittis non donec egestas.</div>
+					</div>
+					<div class="accordions__item">
+						<div class="accordions__item-title"> <span>Question 5</span>
+							<span class="plus"></span>
+						</div>
+						<div class="accordions__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id
+							dui pharetra elementum sit id sagittis non donec egestas.</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+
+	<footer class="footer ">
+		<div class="container">
+			<div class="footer__logo">
+				<a href="index.html" class="logo">
+					<img srcset="img/logo.png 2x" alt="">
+				</a>
+				<div class="footer__logo-socials">
+					<a href="" target="_blank" class="socials-item">
+						<img src="img/ins.svg" alt="">
+					</a>
+					<a href="" target="_blank" class="socials-item">
+						<img src="img/fb.svg" alt="">
+					</a>
+					<a href="" target="_blank" class="socials-item">
+						<img src="img/link.svg" alt="">
+					</a>
+				</div>
+			</div>
+			<div class="footer__menu">
+				<div class="footer__menu-left">
+					<h3 class="heading --uppercase">menu</h3>
+					<ul class="menuft">
+						<li><a class="menu__item" href="#"><span>Home</span></a></li>
+						<li><a class="menu__item" href="#"><span>About</span></a></li>
+						<li><a class="menu__item" href="#"><span>Pricing</span></a></li>
+						<li><a class="menu__item" href="#"><span>Tokens</span></a></li>
+						<li><a class="menu__item" href="#"><span>Blog</span></a></li>
+						<li><a class="menu__item" href="#"><span>contact us</span></a></li>
+					</ul>
+				</div>
+				<div class="itembox">
+					<div class="contentbox">
+						<div class="contentbox__main">
+							<h3 class="heading --h3">Download our Application</h3>
+							<p class="description --fs18-lh32">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								Mauris sed nulla integer .</p>
+						</div>
+						<div class="gr-btn">
+							<a class="btndown --w193 " href="contact.html">
+								<img src="img/apple.svg" alt="">
+								<span>App Store</span>
+							</a>
+							<a class="btndown --w193 " href="contact.html">
+								<img src="img/chplay.svg" alt="">
+								<span>PLAY STORE</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<span class="footer__end --fs16-lh26">
+				© 2023 CFD Circle, Inc.
+			</span>
+		</div>
+	</footer>
+	<script src="dest/jsmain.min.js"></script>
+	<script src="dest/main.js"></script>
+	<script>
+		//hàm trong hàm validator
+		Validator({
+			form: '#form-1',//querySelector vào form mà ta cần xét
+			rules: [   //tạo 1 quy luật cho các trường cần xét
+				Validator.isRequired('#fullname'), //tạo hàm yê cầu tên(bắt buôc)
+				Validator.isEmail('#email'), //email (bắt buôc)
+				Validator.isCpn('#cpn') //cpn (bắt buôc)
+			]
+		});
+
+	</script>
+</body>
+
+</html>
