@@ -1,33 +1,42 @@
-//function load() {
-//  let load = document.querySelector(".loading");
-//  window.addEventListener("load", function () {
-//    load.classList.add("active");
-//  });
-//}
-//load();
+function load() {
+  let load = document.querySelector(".loading");
+  window.addEventListener("load", function () {
+    initLoading();
+  });
+}
+load();
+const listImg = () => {
+  let imgArr = document.querySelectorAll("img");
+  const list = imgArr?.map((item) => item?.isLoaded !== false);
+  console.log("list", list);
+};
+listImg();
 function initLoading() {
   let loadedCount = 0;
   let img = document.querySelectorAll("img").length;
-  let container = document.querySelector("body");
-  let loadedLib = imagesLoaded(container);
-  loadedLib
-    .on("progress", function (instance) {
-      loadedCount++;
-      let percent = Math.floor((loadedCount / img) * 100);
-      handleLoading(percent);
-    })
-    .on("always", function (instance) {
-      //console.log("Ok loaded!");
-    })
-    .on("fail", function (instance) {
-      console.log("No respone!");
-    })
-    .on("done", (instance) => {
-      console.log("Success!!");
-      hideLoading();
-    });
+  let containers = document.querySelector("body");
+
+  if (img > 0) {
+    let loadedLib = imagesLoaded(container);
+    loadedLib
+      .on("progress", function (instance) {
+        loadedCount++;
+        let percent = Math.floor((loadedCount / img) * 100);
+        handleLoading(percent);
+      })
+      .on("always", function (instance) {})
+      .on("fail", function (error) {
+        console.log("fail");
+        console.log("error", error);
+      })
+      .on("done", (instance) => {
+        if (instance?.isComplete) {
+          hideLoading();
+          console.log("done", instance);
+        }
+      });
+  }
 }
-initLoading();
 
 function handleLoading(percent) {
   let progressOut = document.querySelector(".loading__group-tree .percent");
